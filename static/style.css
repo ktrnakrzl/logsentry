@@ -1,0 +1,86 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #1a1a2e;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+/* Navbar */
+nav {
+    background-color: #16213e;
+    padding: 20px 40px;
+    border-bottom: 2px solid #00ff41;
+}
+
+nav h1 {
+    color: #00ff41;
+    font-size: 24px;
+}
+
+/* Container */
+.container {
+    max-width: 700px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.container h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.container p {
+    color: #aaaaaa;
+    margin-bottom: 40px;
+}
+
+/* Upload Box */
+.upload-box {
+    background-color: #16213e;
+    border: 2px dashed #00ff41;
+    border-radius: 12px;
+    padding: 60px 40px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-box:hover {
+    background-color: #0f3460;
+}
+
+.upload-box p {
+    font-size: 18px;
+    color: #00ff41;
+    margin-bottom: 20px;
+}
+
+.upload-box input {
+    color: #ffffff;
+}
+
+/* Analyze Button */
+button {
+    background-color: #00ff41;
+    color: #1a1a2e;
+    border: none;
+    padding: 14px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #00cc33;
+    transform: scale(1.05);
+}

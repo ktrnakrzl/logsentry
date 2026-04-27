@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogSentry</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <nav>
+        <h1>🛡️ LogSentry</h1>
+    </nav>
+
+    <div class="container">
+        <h2>Analyze Your Log Files</h2>
+        <p>Upload a log file to detect threats instantly</p>
+
+        <form action="/analyze" method="POST" enctype="multipart/form-data">
+            <div class="upload-box">
+                <p>📂 Choose a log file</p>
+                <input type="file" name="logfile" accept=".log,.txt">
+            </div>
+            <button type="submit">🔍 Analyze</button>
+        </form>
+    </div>
+
+</body>
+</html>
