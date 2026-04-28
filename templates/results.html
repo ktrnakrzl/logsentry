@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogSentry Results</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+    <nav>
+        <a class="brand" href="/">
+            <span class="brand-mark">LS</span>
+            LogSentry
+        </a>
+    </nav>
+
+    <main class="result-page">
+        <section class="result-card">
+            <p class="hero-kicker">Analysis complete</p>
+
+            <h1>Results for {{ filename }}</h1>
+            <p>Total lines scanned: {{ total_lines }}</p>
+
+            <div class="result-grid">
+                <div>
+                    <h2>Suspicious Patterns</h2>
+
+                    {% if matches %}
+                        <ul class="result-list">
+                            {% for match in matches %}
+                                <li>
+                                    <span>{{ match.keyword }}</span>
+                                    <strong>{{ match.count }}</strong>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No suspicious keywords found.</p>
+                    {% endif %}
+                </div>
+
+                <div>
+                    <h2>IP Addresses Found</h2>
+
+                    {% if ip_addresses %}
+                        <ul class="result-list">
+                            {% for ip in ip_addresses %}
+                                <li>{{ ip }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No IP addresses found.</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <a class="hero-button result-button" href="/">Analyze Another File</a>
+        </section>
+    </main>
+
+</body>
+</html>

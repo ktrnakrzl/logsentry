@@ -1,0 +1,17 @@
+1. Hardware Requirements — not connected to any diagram
+XChango's hardware table has a Description column on every row that directly explains how each hardware component supports a specific feature of the system (e.g., "Ensures smooth in-app navigation, real-time messaging, and trade interactions"). Mathiva's hardware table has no description column — it just lists specs with no explanation of how they relate to Mathiva's features. That description column is what creates the connection between hardware and the system.
+
+2. Software Requirements — each tool is not connected back to a diagram
+In XChango, every software figure description ends by explaining which part of the system or which feature that tool directly enables. For example, Node.js is connected to APIs, real-time communication, authentication, and chat. Mathiva does this partially but inconsistently — tools like Android Studio, Figma-equivalent tools, and the dev environment are described in isolation without pointing to which specific diagram or system module they appear in.
+
+3. Network Requirements — too generic, not tied to specific features
+XChango's network figure ties the internet connection directly to specific platform features (item browsing, chat messaging, trade coordination). Mathiva's network section mentions general features but then adds a second paragraph about the development team's connection needs — which XChango does not do. That second paragraph has no diagram to connect to, so it just floats without purpose.
+
+4. Software figures are numbered incorrectly, breaking the connection to diagrams
+XChango's software figures are numbered sequentially and continuously (Figure 2 through Figure 8 for requirements, then Figure 23 onward for diagrams). Mathiva reuses figure numbers — you have two "Figure 2"s and two "Figure 4"s across the requirements and diagrams sections. This breaks the traceability because a reader can't tell which Figure 2 or Figure 4 is being referenced.
+
+5. System Architecture — software tools named in requirements are not explicitly called out in the diagram description
+XChango's System Architecture description names the actual technologies involved at each step (Google for auth, Cloudinary for images, WebSocket for chat, REST APIs for data). Mathiva's architecture description names the tools but doesn't connect them to the flow — it reads more like a list than a walkthrough of how data moves using those tools.
+
+6. Agile/System Development — not connected to Mathiva's specific features
+XChango's Agile description mentions which specific features get built in early sprints vs. later ones. Mathiva's Agile description explains the methodology steps in general but never mentions Mathiva's actual features (OCR, RAG, T5 model, practice problems) in the context of the sprint cycle — so the connection between the development methodology and the software requirements is completely absent.

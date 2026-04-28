@@ -1,0 +1,5 @@
+2026-04-28 10:00:01 INFO Login success from 192.168.1.10
+2026-04-28 10:01:12 WARNING Login failed for admin from 192.168.1.20
+2026-04-28 10:02:33 ERROR Unauthorized access denied from 10.0.0.5
+2026-04-28 10:03:44 ALERT Possible brute force attack detected
+2026-04-28 10:04:55 ERROR Permission denied from 172.16.0.8
