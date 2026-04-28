@@ -4,26 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LogSentry</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
 
     <nav>
-        <h1>🛡️ LogSentry</h1>
+        <a class="brand" href="/">
+            <span class="brand-mark">
+                <svg class="icon brand-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3l7 3v5c0 4.6-2.9 8.8-7 10-4.1-1.2-7-5.4-7-10V6l7-3z"></path>
+                    <path d="M9.8 12l1.5 1.5 3.4-3.6"></path>
+                </svg>
+            </span>
+            LogSentry
+        </a>
+
+        <div class="nav-actions">
+            <a class="contact-button" href="#analyzer">Analyze Now</a>
+        </div>
     </nav>
 
-    <div class="container">
-        <h2>Analyze Your Log Files</h2>
-        <p>Upload a log file to detect threats instantly</p>
-
-        <form action="/analyze" method="POST" enctype="multipart/form-data">
-            <div class="upload-box">
-                <p>📂 Choose a log file</p>
-                <input type="file" name="logfile" accept=".log,.txt">
+    <main>
+        <section class="hero">
+            <div class="hero-kicker">
+                <span>Live threat insights</span>
+                <svg class="icon flame-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 22c4 0 7-2.8 7-6.7 0-2.4-1.3-4.6-3.1-6.5-.4 1.7-1.3 2.7-2.5 3.2.3-3.5-1.4-6.2-4-8-1 3.4-4.4 5.8-4.4 10.6C5 18.8 8 22 12 22z"></path>
+                    <path d="M12 18c1.5 0 2.6-1 2.6-2.5 0-1-.5-1.8-1.3-2.6-.3.9-.8 1.4-1.5 1.7 0-1.3-.6-2.4-1.7-3.3-.4 1.4-1.7 2.4-1.7 4.2C8.4 17 9.8 18 12 18z"></path>
+                </svg>
             </div>
-            <button type="submit">🔍 Analyze</button>
-        </form>
-    </div>
+
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <h1><span>Upload</span> your logs & analyze instantly</h1>
+                    <div class="hero-cta-row">
+                        <a class="hero-button" href="#analyzer">
+                            Start Analysis
+                            <span class="avatar-stack" aria-hidden="true">
+                                <span>L</span>
+                                <span>S</span>
+                                <span>A</span>
+                            </span>
+                        </a>
+                        <div class="fast-note">
+                            <svg class="scribble" viewBox="0 0 130 64" aria-hidden="true">
+                                <path d="M4 27c24 29 58 28 82-1"></path>
+                                <path d="M86 26l-14-3"></path>
+                                <path d="M86 26l-6 13"></path>
+                            </svg>
+                            <p>Fast scans. Clear answers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="hero-intro">
+                    Drop in a log file and let LogSentry surface suspicious patterns, errors, and security signals in seconds.
+                </p>
+            </div>
+        </section>
+
+        <section class="analyzer-section" id="analyzer">
+            <div class="section-heading">
+                <h2>Analyze Your Log Files</h2>
+                <p>Upload a log file to detect threats instantly.</p>
+            </div>
+
+            <form action="/analyze" method="POST" enctype="multipart/form-data">
+                <div class="upload-box">
+                    <p>
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 19h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-7.2L10.8 5H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"></path>
+                        </svg>
+                        Choose a log file
+                    </p>
+                    <input type="file" name="logfile" accept=".log,.txt">
+                </div>
+                <button class="analyze-button" type="submit">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="M20 20l-3.5-3.5"></path>
+                    </svg>
+                    Analyze
+                </button>
+            </form>
+        </section>
+    </main>
 
 </body>
 </html>
