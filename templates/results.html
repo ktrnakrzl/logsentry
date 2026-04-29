@@ -32,8 +32,10 @@
                                 <li>
                                     <span>{{ match.keyword }}</span>
                                     <strong>{{ match.count }}</strong>
+                                    <em class="severity-{{ match.severity|lower }}">{{ match.severity }}</em>
                                 </li>
-                            {% endfor %}
+
+                            {% endfor %} 
                         </ul>
                     {% else %}
                         <p>No suspicious keywords found.</p>

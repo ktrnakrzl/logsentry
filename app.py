@@ -55,32 +55,34 @@ def analyze():
     # Convert the log content to lowercase so matching is case-insensitive
     lower_content = content.lower()
 
-    # These words may indicate errors or suspicious activity in a log file
-    suspicious_keywords = [
-        'error',
-        'failed',
-        'unauthorized',
-        'denied',
-        'warning',
-        'attack',
-        'malware',
-        'brute force',
-        'login failed',
-        'port scan'
-    ]
+    # These words may indicate errors or suspicious activity in a log file.
+    # Each keyword also has a severity level for the results page.
+    suspicious_keywords = {
+        'warning': 'Low',
+        'error': 'Medium',
+        'failed': 'Medium',
+        'login failed': 'Medium',
+        'denied': 'High',
+        'unauthorized': 'High',
+        'attack': 'High',
+        'malware': 'Critical',
+        'brute force': 'Critical',
+        'port scan': 'Critical'
+    }
 
     # This list will store suspicious keywords that were found
     matches = []
 
     # Count how many times each suspicious keyword appears
-    for keyword in suspicious_keywords:
+    for keyword, severity in suspicious_keywords.items():
         count = lower_content.count(keyword)
 
         # Only save keywords that were actually found
         if count > 0:
             matches.append({
                 'keyword': keyword,
-                'count': count
+                'count': count,
+                'severity': severity
             })
 
     # Find possible IP addresses inside the log file

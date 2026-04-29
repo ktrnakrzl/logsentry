@@ -534,3 +534,29 @@ button:hover {
         padding: 28px;
     }
 }
+.severity-low {
+    background: #e8f7ee;
+    color: #15803d;
+}
+
+.severity-medium {
+    background: #fff7dd;
+    color: #b45309;
+}
+
+.severity-high {
+    background: #ffe4e6;
+    color: #be123c;
+}
+
+.severity-critical {
+    background: #1f1028;
+    color: #ffffff;
+}
+
+.result-list em {
+    border-radius: 999px;
+    font-style: normal;
+    font-weight: 800;
+    padding: 6px 10px;
+}
